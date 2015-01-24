@@ -1,0 +1,246 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78D0AD30-FFCE-4410-96C6-8063C3E41ED6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DemoGame.Server</RootNamespace>
+    <AssemblyName>DemoGame.Server</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dependencies\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
+    <Reference Include="MySql.Data, Version=6.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="World\Map\Entities\Characters\AI\AIBase.cs" />
+    <Compile Include="World\Map\Entities\Characters\AI\AIFactory.cs" />
+    <Compile Include="World\Map\Entities\Characters\AI\TestAI.cs" />
+    <Compile Include="World\Map\Entities\Characters\Character.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="World\Map\Entities\Characters\CharacterStatusEffects.cs" />
+    <Compile Include="World\Map\Entities\Characters\CharacterSPSynchronizer.cs" />
+    <Compile Include="World\Map\Entities\Characters\CharacterStats.cs" />
+    <Compile Include="World\Map\Entities\Characters\NonPersistentCharacterStatusEffects.cs" />
+    <Compile Include="World\Map\Entities\Characters\PersistentCharacterStatusEffects.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPC.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="World\Map\Entities\Characters\UserChatDialogState.cs" />
+    <Compile Include="World\Map\Entities\Characters\UserSPSynchronizer.cs" />
+    <Compile Include="World\Map\Entities\Characters\CharacterTemplateEquipmentItemExtensions.cs" />
+    <Compile Include="World\Map\Entities\Characters\CharacterTemplateInventoryItemExtensions.cs" />
+    <Compile Include="Console\ConsoleCommandAttribute.cs" />
+    <Compile Include="IRespawnable.cs" />
+    <Compile Include="World\Map\Entities\Items\CharacterEquipped.cs" />
+    <Compile Include="World\Map\Entities\Items\CharacterInventory.cs" />
+    <Compile Include="World\Map\Entities\Items\InventoryChangeInfo.cs" />
+    <Compile Include="World\Map\Entities\Items\InventoryChangeTracker.cs" />
+    <Compile Include="World\Map\Entities\Items\ItemValueTracker.cs" />
+    <Compile Include="World\Map\Entities\Items\NPCEquipped.cs" />
+    <Compile Include="World\Map\Entities\Items\NPCInventory.cs" />
+    <Compile Include="Console\ConsoleCommands.cs" />
+    <Compile Include="World\Map\Entities\Items\UserEquipped.cs" />
+    <Compile Include="World\Map\Entities\Items\UserInventoryUpdater.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\HPPercentGreaterThan.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\HPPercentGreaterThanOrEqualTo.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\HPPercentLessThan.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\HPPercentLessThanOrEqualTo.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\Implementations\NPCChatConditionalCollection.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\Implementations\NPCChatConditionalCollectionItem.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\MPPercentGreaterThan.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\MPPercentGreaterThanOrEqualTo.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\MPPercentLessThan.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\MPPercentLessThanOrEqualTo.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\Conditionals\Implementations\NPCChatConditional.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\NPCChatDialog.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\NPCChatDialogItem.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\NPCChatManager.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\NPCChatResponse.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\NPCChatResponseAction.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\ResponseActions\RestoreHP.cs" />
+    <Compile Include="World\Map\Entities\Characters\NPCChat\ResponseActions\RestoreMP.cs" />
+    <Compile Include="Account\AccountLoginResult.cs" />
+    <Compile Include="Queries\SelectAccountQuery.cs" />
+    <Compile Include="Queries\TrySetAccountIPIfNullQuery.cs" />
+    <Compile Include="Queries\UpdateCharacterQuery.cs" />
+    <Compile Include="SayHandler.cs" />
+    <Compile Include="Networking\ServerPacket.cs" />
+    <Compile Include="Networking\ServerPacketHandler.cs" />
+    <Compile Include="ServerRuntimeCleaner.cs" />
+    <Compile Include="ServerTimeUpdater.cs" />
+    <Compile Include="World\Map\Entities\Characters\Skills\SkillBase.cs" />
+    <Compile Include="World\Map\Entities\Characters\Skills\SkillHeal.cs" />
+    <Compile Include="World\Map\Entities\Characters\Skills\SkillManager.cs" />
+    <Compile Include="World\Map\Entities\Characters\Skills\SkillStrengthen.cs" />
+    <Compile Include="World\Map\Entities\Characters\StatusEffects\ActiveStatusEffect.cs" />
+    <Compile Include="World\Map\Entities\Characters\StatusEffects\StatusEffectManager.cs" />
+    <Compile Include="World\Map\Entities\Characters\StatusEffects\StatusEffectStrengthen.cs" />
+    <Compile Include="Account\UserAccount.cs" />
+    <Compile Include="World\Map\Entities\DamageTrapEntity.cs" />
+    <Compile Include="World\Map\Entities\Items\UserInventory.cs" />
+    <Compile Include="World\Map\Entities\Items\ItemEntity.cs" />
+    <Compile Include="World\Map\Entities\Stats\NPCStats.cs" />
+    <Compile Include="World\Map\Entities\Stats\UserStats.cs" />
+    <Compile Include="World\Map\Map.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="Networking\ServerSockets.cs" />
+    <Compile Include="World\Map\Entities\Characters\User.cs" />
+    <Compile Include="World\Map\NPCSpawner.cs" />
+    <Compile Include="World\Map\Entities\TeleportEntity.cs" />
+    <Compile Include="World\World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DemoGame.ServerObjs\DemoGame.ServerObjs.csproj">
+      <Project>{20E83735-4A5F-426C-9759-F9A1AD51B00E}</Project>
+      <Name>DemoGame.ServerObjs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Collections\NetGore.Collections.csproj">
+      <Project>{C45432C4-D511-4874-8BF9-EB91AD6E8839}</Project>
+      <Name>NetGore.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Db.MySql\NetGore.Db.MySql.csproj">
+      <Project>{43D09443-29F5-4688-81D7-5B5835EAC550}</Project>
+      <Name>NetGore.Db.MySql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Db\NetGore.Db.csproj">
+      <Project>{EF4B471E-C101-4AAC-882E-BBDE9A54D212}</Project>
+      <Name>NetGore.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj">
+      <Project>{CF26A8C6-7162-499C-8870-BF3C29E43532}</Project>
+      <Name>NetGore.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.IO\NetGore.IO.csproj">
+      <Project>{E7C8665B-101F-4930-97B7-68FC2C236971}</Project>
+      <Name>NetGore.IO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Network\NetGore.Network.csproj">
+      <Project>{B51BE2B8-B1A9-460A-BC38-794FAC66636C}</Project>
+      <Name>NetGore.Network</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore\NetGore.csproj">
+      <Project>{5C385F68-DAEB-4BF2-9472-D5D69B6B2373}</Project>
+      <Name>NetGore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DemoGame\DemoGame.csproj">
+      <Project>{772C6932-6CAF-48A0-88ED-C2BF5E9153F2}</Project>
+      <Name>DemoGame</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(ProjectDir)\..\DemoGame.Client\Content\Maps" "$(TargetDir)Content\Maps" /E /C /R /K /I /Y
+xcopy "$(ProjectDir)\..\DemoGame.Client\Content\Data" "$(TargetDir)Content\Data" /E /C /R /K /I /Y
+xcopy "$(ProjectDir)\ServerScripts" "$(TargetDir)Content\Data\ServerScripts" /E /C /R /K /I /Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>

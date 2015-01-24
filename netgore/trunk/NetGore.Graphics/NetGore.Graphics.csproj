@@ -1,0 +1,199 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{76C45E48-16F2-478F-B06C-5AD993F6B1F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NetGore.Graphics</RootNamespace>
+    <AssemblyName>NetGore.Graphics</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <WarningLevel>4</WarningLevel>
+    <DefineConstants>DEBUG;TRACE;XNA</DefineConstants>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;XNA</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\_dependencies\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=3.1.0.0, Culture=neutral, PublicKeyToken=6d5c3888ef60e27d, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Atlas\AtlasNode.cs" />
+    <Compile Include="Atlas\AtlasTreeNode.cs" />
+    <Compile Include="Atlas\ITextureAtlas.cs" />
+    <Compile Include="Atlas\TextureAtlas.cs" />
+    <Compile Include="Background\BackgroundImage.cs" />
+    <Compile Include="Background\BackgroundLayerLayout.cs" />
+    <Compile Include="Background\BackgroundLayer.cs" />
+    <Compile Include="Background\BackgroundLayerLayoutHelper.cs" />
+    <Compile Include="Camera2D.cs" />
+    <Compile Include="ContentManagerExtensions.cs" />
+    <Compile Include="Exceptions\GrhDataException.cs" />
+    <Compile Include="Exceptions\GrhDataNotFoundException.cs" />
+    <Compile Include="GUI\Control Bases\Control.cs" />
+    <Compile Include="GUI\Control Bases\ControlEventHandler.cs" />
+    <Compile Include="GUI\Control Bases\ControlSettings.cs" />
+    <Compile Include="GUI\Control Bases\SpriteControl.cs" />
+    <Compile Include="GUI\Control Bases\SpriteControlSettings.cs" />
+    <Compile Include="GUI\Control Bases\TextControl.cs" />
+    <Compile Include="GUI\Control Bases\TextControlSettings.cs" />
+    <Compile Include="GUI\ControlBorder.cs" />
+    <Compile Include="GUI\Controls\Button.cs" />
+    <Compile Include="GUI\Controls\ButtonSettings.cs" />
+    <Compile Include="GUI\Controls\CheckBox.cs" />
+    <Compile Include="GUI\Controls\CheckBoxSettings.cs" />
+    <Compile Include="GUI\Controls\Form.cs" />
+    <Compile Include="GUI\Controls\FormSettings.cs" />
+    <Compile Include="GUI\Controls\Label.cs" />
+    <Compile Include="GUI\Controls\LabelSettings.cs" />
+    <Compile Include="GUI\Controls\Panel.cs" />
+    <Compile Include="GUI\Controls\PanelSettings.cs" />
+    <Compile Include="GUI\Controls\PictureBox.cs" />
+    <Compile Include="GUI\Controls\PictureBoxSettings.cs" />
+    <Compile Include="GUI\Controls\TextBox.cs" />
+    <Compile Include="GUI\Controls\TextBoxSettings.cs" />
+    <Compile Include="GUI\EditableTextHandler.cs" />
+    <Compile Include="GUI\EventArgs\KeyboardEventArgs.cs" />
+    <Compile Include="GUI\EventArgs\KeyboardEventHandler.cs" />
+    <Compile Include="GUI\EventArgs\MouseButtons.cs" />
+    <Compile Include="GUI\EventArgs\MouseClickEventArgs.cs" />
+    <Compile Include="GUI\EventArgs\MouseClickEventHandler.cs" />
+    <Compile Include="GUI\EventArgs\MouseEventArgs.cs" />
+    <Compile Include="GUI\EventArgs\MouseEventHandler.cs" />
+    <Compile Include="GUI\GameControl\GameControl.cs" />
+    <Compile Include="GUI\GameControl\GameControlCollection.cs" />
+    <Compile Include="GUI\GameControl\GameControlEventHandler.cs" />
+    <Compile Include="GUI\GameControl\GameControlKeys.cs" />
+    <Compile Include="GUI\GUIEventHandler.cs" />
+    <Compile Include="GUI\GUIManagerBase.cs" />
+    <Compile Include="GUI\IEditableText.cs" />
+    <Compile Include="GUI\MoveCursorDirection.cs" />
+    <Compile Include="GUI\Screen Manager\GameScreen.cs" />
+    <Compile Include="GUI\Screen Manager\ScreenManager.cs" />
+    <Compile Include="GUI\StyledText.cs" />
+    <Compile Include="GUI\StyledTextsDrawer.cs" />
+    <Compile Include="GUI\TextBoxLine.cs" />
+    <Compile Include="GUI\TextBoxLineChangeEventHandler.cs" />
+    <Compile Include="GUI\TextBoxLines.cs" />
+    <Compile Include="GUI\Tooltip\Tooltip.cs" />
+    <Compile Include="GUI\Tooltip\TooltipArgs.cs" />
+    <Compile Include="GUI\Tooltip\TooltipHandler.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="MapGrh.cs" />
+    <Compile Include="MapRenderLayer.cs" />
+    <Compile Include="MapRenderLayerChange.cs" />
+    <Compile Include="ParticleEngine\IParticleRenderer.cs" />
+    <Compile Include="ParticleEngine\Particle.cs" />
+    <Compile Include="ParticleEngine\ParticleEmitter.cs" />
+    <Compile Include="ParticleEngine\ParticleRendererBase.cs" />
+    <Compile Include="ParticleEngine\SpriteBatchRenderer.cs" />
+    <Compile Include="Sprite\Grh\GrhConverter.cs" />
+    <Compile Include="EntityInterpolator.cs" />
+    <Compile Include="Sprite\AnimType.cs" />
+    <Compile Include="Sprite\Grh\GrhDataChangeCategorizationHandler.cs" />
+    <Compile Include="Sprite\Grh\GrhDataEventHandler.cs" />
+    <Compile Include="MapBorderDrawer.cs" />
+    <Compile Include="Skeleton\SkeletonBodyInfo.cs" />
+    <Compile Include="Skeleton\SkeletonBodyItemInfo.cs" />
+    <Compile Include="Skeleton\SkeletonFrame.cs" />
+    <Compile Include="SpriteBatchExtensions.cs" />
+    <Compile Include="Primitives\XNAArrow.cs" />
+    <Compile Include="Primitives\XNARectangle.cs" />
+    <Compile Include="FrameCounter.cs" />
+    <Compile Include="Sprite\Grh\Grh.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sprite\Grh\GrhData.cs" />
+    <Compile Include="Sprite\Grh\GrhInfo.cs" />
+    <Compile Include="Sprite\ISprite.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScreenGrid.cs" />
+    <Compile Include="Skeleton\Skeleton.cs" />
+    <Compile Include="Skeleton\SkeletonAnimation.cs" />
+    <Compile Include="Skeleton\SkeletonBody.cs" />
+    <Compile Include="Skeleton\SkeletonBodyItem.cs" />
+    <Compile Include="Skeleton\SkeletonDrawer.cs" />
+    <Compile Include="Skeleton\SkeletonManager.cs" />
+    <Compile Include="Skeleton\SkeletonNode.cs" />
+    <Compile Include="Skeleton\SkeletonSet.cs" />
+    <Compile Include="Sprite\Sprite.cs" />
+    <Compile Include="Primitives\XNALine.cs" />
+    <Compile Include="Primitives\XNATriangle.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetGore.Audio\NetGore.Audio.csproj">
+      <Project>{DB59800A-5924-4DE7-A349-46B60AF0348F}</Project>
+      <Name>NetGore.Audio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Collections\NetGore.Collections.csproj">
+      <Project>{C45432C4-D511-4874-8BF9-EB91AD6E8839}</Project>
+      <Name>NetGore.Collections</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.Core\NetGore.Core.csproj">
+      <Project>{CF26A8C6-7162-499C-8870-BF3C29E43532}</Project>
+      <Name>NetGore.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore.IO\NetGore.IO.csproj">
+      <Project>{E7C8665B-101F-4930-97B7-68FC2C236971}</Project>
+      <Name>NetGore.IO</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\NetGore\NetGore.csproj">
+      <Project>{5C385F68-DAEB-4BF2-9472-D5D69B6B2373}</Project>
+      <Name>NetGore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
